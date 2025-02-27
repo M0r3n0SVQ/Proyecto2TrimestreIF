@@ -211,5 +211,9 @@
   <ItemGroup>
     <Resource Include="img\eliminarVerde.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Cerrar.png" />
+    <Resource Include="img\Minimizar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

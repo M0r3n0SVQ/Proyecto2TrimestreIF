@@ -61,7 +61,7 @@
             <!-- Lista de categorías -->
             <StackPanel Orientation="Vertical" Margin="-27,10,303,10">
                 <Label Content="Categoría" Foreground="#5DB85B" FontSize="16" Width="109"/>
-                <ComboBox x:Name="cmbCategorias"
+                <ComboBox x:Name="cmbCategorias" Style="{StaticResource comboBoxVerde}"
                          Width="100"
                          Height="20"/>
             </StackPanel>

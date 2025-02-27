@@ -12,7 +12,6 @@ namespace Proyecto2Trimestre
             contenidoPrincipal.Content = new InicioControl();
             this.Closing += MainWindow_Close;
         }
-
         private void btnInicio_Click(object sender, RoutedEventArgs e)
         {
             // Cargar el UserControl de inicio

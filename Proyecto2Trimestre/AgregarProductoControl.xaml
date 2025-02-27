@@ -58,14 +58,12 @@
                Grid.Column="1"
                Margin="59,27,-19,67" 
                FontSize="16" Grid.RowSpan="2" />
-        <ComboBox x:Name="cmbCategoria" 
+        <ComboBox x:Name="cmbCategoria" Style="{StaticResource comboBoxVerde}"
                   Width="200" 
                   Height="30" 
                   Grid.Row="2"
                   Grid.Column="1"
-                  Margin="59,30,141,10" 
-                  BorderBrush="#FF555555"/>
-
+                  Margin="59,30,141,10" />
         <Button Content="Agregar"
                 Style="{StaticResource Btnentrar}"
                 Width="100" 

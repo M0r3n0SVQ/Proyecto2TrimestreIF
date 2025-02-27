@@ -187,4 +187,11 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <Style x:Key="comboBoxVerde" TargetType="ComboBox">
+        <Setter Property="Background" Value="{StaticResource Verde}"/>
+        <Setter Property="Foreground" Value="Green"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+
 </ResourceDictionary>
