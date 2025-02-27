@@ -1,0 +1,61 @@
+﻿<Window x:Class="Proyecto2Trimestre.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Background="#FF1F1F1F"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Height="430" Width="780">
+
+            <Label HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <!-- Texto a la izquierda -->
+                    <TextBlock Text="NORTHWIND" Style="{StaticResource TextoTitulo}" FontSize="48"/>
+                    <Image Source="img/bd1.png" Width="48" Height="48"/>
+
+                    <!-- Icono a la derecha -->
+                </StackPanel>
+            </Label>
+
+            <Label Content="Usuario"
+                   FontFamily="Inter"
+                   FontWeight="Bold"
+                   Foreground="#5DB85B" 
+                   Margin="285,30,0,0" 
+                   FontSize="16" />
+
+            <TextBox x:Name="txtUser" 
+                     Width="200" 
+                     Height="30" 
+                     Margin="0,5,0,0" 
+                     Foreground="White"
+                     BorderThickness="0,0,0,1"
+                     Background="#FF1F1F1F" 
+                     BorderBrush="#FF555555" />
+            <Label Content="Contraseña" 
+                   FontFamily="Inter"
+                   FontWeight="Bold"
+                   Margin="285,30,0,0" 
+                   Foreground="#5DB85B" 
+                   FontSize="16" />
+
+            <PasswordBox x:Name="txtPassword" 
+                         Width="200" 
+                         Height="30" 
+                         Margin="0,5,0,0" 
+                         Foreground="White" 
+                         Background="#FF1F1F1F" 
+                         BorderThickness="0,0,0,1"
+                         BorderBrush="#FF555555" />
+
+            <Button Content="Entrar" Style="{StaticResource Btnentrar}" Click="Button_Click" Margin="0,10,0,0"/>
+
+        </StackPanel>
+    </Grid>
+</Window>

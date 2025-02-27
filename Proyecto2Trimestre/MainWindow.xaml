@@ -1,0 +1,151 @@
+﻿<Window x:Class="Proyecto2Trimestre.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Proyecto2Trimestre"  
+        mc:Ignorable="d"
+        Title="Northwind" 
+        Height="600" Width="800"
+        Background="{StaticResource FondoVentana}" 
+        WindowStyle="SingleBorderWindow" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Menú fijo -->
+            <ColumnDefinition Width="*"/>
+            <!-- Contenido dinámico -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Panel de menú con Grid -->
+        <Grid Grid.Column="0" Background="{StaticResource FondoBarraLateral}">
+            <!-- Definir filas para organizar los elementos -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Título -->
+                <RowDefinition Height="Auto"/>
+                <!-- Botón Inicio -->
+                <RowDefinition Height="Auto"/>
+                <!-- Botón Agregar -->
+                <RowDefinition Height="Auto"/>
+                <!-- Botón Modificar -->
+                <RowDefinition Height="Auto"/>
+                <!-- Botón Borrar -->
+                <RowDefinition Height="*"/>
+                <!-- Espacio libre -->
+                <RowDefinition Height="Auto"/>
+                <!-- Botón Salir -->
+            </Grid.RowDefinitions>
+
+            <!-- Título del menú -->
+            <Label Foreground="Black" 
+                   FontSize="24"
+                   FontFamily="Inter"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Grid.Row="0" 
+                   Margin="0,20,0,0">
+                <Label.Content>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="NORTHWIND" VerticalAlignment="Center"/>
+                        <Image Source="img/bd1.png" Width="32" Height="32"/>
+                    </StackPanel>
+                </Label.Content>
+            </Label>
+
+            <!-- Botón de inicio -->
+            <Button x:Name="btnInicio" Click="btnInicio_Click" 
+                    Width="100" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Grid.Row="1" 
+                    MinWidth="120"
+                    Style="{StaticResource BotonMenu}" Margin="-6,20,0,20">
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="img/inicio.png" Width="18" Height="18" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="INICIO" VerticalAlignment="Center" Foreground="Black" Margin="5" FontFamily="Inter" FontWeight="Bold" FontSize="14" TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Botón agregar -->
+            <Button x:Name="btnAgregar" Click="btnAgregar_Click" 
+                    Width="100" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Grid.Row="2" 
+                    MinWidth="120"
+                    Style="{StaticResource BotonMenu}">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="img/agregar.png" Width="18" Height="18" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="AGREGAR" VerticalAlignment="Center" Foreground="Black" FontFamily="Inter" FontWeight="Bold" FontSize="14" TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Botón modificar -->
+            <Button x:Name="btnModificar" Click="btnModificar_Click" 
+                    Width="100" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Grid.Row="3" 
+                    MinWidth="120"
+                    Style="{StaticResource BotonMenu}" 
+                    Margin="0,20,0,20">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Icono -->
+                    <Image Source="img/modificar.png" Width="18" Height="18" VerticalAlignment="Center" Margin="0,0,10,0" Grid.Column="0"/>
+
+                    <!-- Texto -->
+                    <TextBlock Text="MODIFICAR" 
+                               VerticalAlignment="Center" 
+                               Foreground="Black" 
+                               FontFamily="Inter" 
+                               FontWeight="Bold" 
+                               FontSize="12" 
+                               TextTrimming="CharacterEllipsis" 
+                               HorizontalAlignment="Left" 
+                               Grid.Column="1"/>
+                </Grid>
+            </Button>
+
+            <!-- Botón borrar -->
+            <Button x:Name="btnBorrar" Click="btnBorrar_Click" 
+                    Width="100" 
+                    Background="Transparent" 
+                    BorderThickness="0" 
+                    Grid.Row="4" 
+                    MinWidth="120"
+                    Style="{StaticResource BotonMenu}">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="img/eliminar.png" Width="18" Height="18" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                    <TextBlock Text="BORRAR" VerticalAlignment="Center" Foreground="Black" Margin="5" FontFamily="Inter" FontWeight="Bold" FontSize="14" TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Button>
+
+            <!-- Botón salir -->
+            <Button x:Name="btnSalir" Click="btnSalir_Click" 
+                    BorderBrush="Transparent"
+                    Background="Transparent" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Left"
+                    Margin="10" 
+                    Width="40" 
+                    Height="40" 
+                    Grid.Row="6"
+                    Style="{StaticResource BotonSalir}">
+
+                <Image Source="img/salir.png" Stretch="Uniform"/>
+            </Button>
+        </Grid>
+
+        <!-- Contenido dinámico -->
+<ContentControl x:Name="contenidoPrincipal" Grid.Column="1" Margin="20" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>    </Grid>
+</Window>

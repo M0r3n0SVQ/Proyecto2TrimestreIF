@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="Proyecto2Trimestre.ModificarProductoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="600">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Título -->
+            <RowDefinition Height="Auto"/>
+            <!-- Producto antiguo y producto nuevo -->
+            <RowDefinition Height="Auto"/>
+            <!-- Categorías y botón modificar -->
+            <RowDefinition Height="Auto"/>
+            <!-- Etiquetas de columnas -->
+            <RowDefinition Height="*"/>
+            <!-- DataGrid -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" HorizontalAlignment="Left" Margin="20,20,0,20">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="img/modificarVerde.png" Width="24" Height="24" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                <TextBlock Text="MODIFICAR" Foreground="#5DB85B" FontSize="24" FontFamily="Inter" FontWeight="Bold" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Label>
+
+        <!-- Producto antiguo y Producto nuevo -->
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" Width="312">
+                <Label Content="Producto antiguo" Foreground="#5DB85B" FontSize="16" Width="342"/>
+                <TextBox x:Name="txtProductoAntiguo"
+                         Style="{StaticResource BarraUsuario}"
+                         Margin="0,0,100,0"
+                         Height="30"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Width="200">
+                <Label Content="Producto nuevo" Foreground="#5DB85B" FontSize="16" Width="161"/>
+                <TextBox x:Name="txtProductoNuevo"
+                         Margin="0,0,30,0"
+                         Height="30" 
+                         Style="{StaticResource ResourceKey=BarraUsuario}"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Categorías y botón modificar -->
+        <Grid Grid.Row="2" Margin="20,10,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Lista de categorías -->
+            <StackPanel Orientation="Vertical" Margin="-27,10,303,10">
+                <Label Content="Categoría" Foreground="#5DB85B" FontSize="16" Width="109"/>
+                <ComboBox x:Name="cmbCategorias"
+                         Width="100"
+                         Height="20"/>
+            </StackPanel>
+
+            <!-- Botón modificar -->
+            <Button Content="Modificar" Style="{StaticResource Btnentrar}"
+                    Width="120" 
+                    Height="40"
+                    Margin="358,31,0,0"
+                    Click="btnModificar_Click"/>
+        </Grid>
+
+        <!-- Grid para las etiquetas justo encima del DataGrid -->
+        <Grid Grid.Row="3" Margin="20,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Producto" 
+                   Foreground="#5DB85B" 
+                   FontSize="16" 
+                   HorizontalAlignment="Center"
+                   Grid.Column="0" />
+
+            <Label Content="Categoría" 
+                   Foreground="#5DB85B" 
+                   FontSize="16" 
+                   HorizontalAlignment="Center"
+                   Grid.Column="1" />
+        </Grid>
+
+        <!-- DataGrid alineado justo debajo de las etiquetas -->
+        <DataGrid x:Name="dgProductos" AutoGenerateColumns="False" Margin="20,0,20,27" Grid.Row="4" Grid.ColumnSpan="2" GridLinesVisibility="Vertical">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ProductName}" Width="*" />
+                <DataGridTextColumn Binding="{Binding CategoryName}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

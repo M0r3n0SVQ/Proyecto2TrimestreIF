@@ -1,0 +1,190 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Estilos de diseño-->
+
+    <!--Colores principales-->
+    <SolidColorBrush x:Key="Verde" Color="#5DB85B"/>
+    <SolidColorBrush x:Key="Oscuro" Color="#242424"/>
+    <SolidColorBrush x:Key="Gris" Color="#777777"/>
+
+    <!--Titulo Northwind-->
+    <Style x:Key="Titulo" TargetType="TextBlock">
+        <Setter Property="Margin" Value="0,30,0,0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="50"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource Verde}"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <!-- Aplicar efecto sombra -->
+                <DropShadowEffect Color="Wheat" Direction="315" ShadowDepth="0" Opacity="0.6" BlurRadius="15"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Foto-->
+    <Style x:Key="Foto" TargetType="Image">
+        <Setter Property="Margin" Value="561,30,86,396"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <!-- Aplicar efecto sombra -->
+                <DropShadowEffect Color="Wheat" Direction="315" ShadowDepth="0" Opacity="0.5" BlurRadius="15"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--Usuario-->
+    <Style x:Key="Usuario" TargetType="TextBlock">
+        <Setter Property="Margin" Value="320,110,100,100"/>
+
+        <Setter Property="Foreground" Value="{StaticResource Verde}"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <!--Barra de usuario-->
+    <Style x:Key="BarraUsuario" TargetType="TextBox">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Gris}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Margin" Value="150,0,100,120"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <!--Contraseña-->
+    <Style x:Key="Contraseña" TargetType="TextBlock">
+        <Setter Property="Margin" Value="330,220,100,100"/>
+
+        <Setter Property="Foreground" Value="{StaticResource Verde}"/>
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+
+    <!--Barra de contraseña-->
+    <Style x:Key="BarraContraseña" TargetType="PasswordBox">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Gris}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Margin" Value="150,72,100,0"/>
+        <Setter Property="Foreground" Value="{StaticResource Verde}"/>
+    </Style>
+
+    <!-- estilo del boton-->
+    <Style x:Key="Btnentrar" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="180"/>
+        <Setter Property="Background" Value="Green" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="FontSize" Value="18" />
+
+        <Setter Property="Margin" Value="325,366,275,28"/>
+        <!--poner el boton redondeado-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="#5DB85B" 
+                        BorderBrush="#80DB80" 
+                        BorderThickness="2" 
+                        CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Mensaje de error del login-->
+    <Style x:Key="MensajeError" TargetType="TextBlock">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="250"/>
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Margin" Value="310,305,247,89"/>
+    </Style>
+
+    <!-- Colores de fondo -->
+    <SolidColorBrush x:Key="FondoVentana" Color="#1A1A1A"/>
+    <SolidColorBrush x:Key="FondoBarraLateral" Color="#4CAF50"/>
+    <SolidColorBrush x:Key="FondoContenido" Color="#101010"/>
+    <SolidColorBrush x:Key="FondoBarraTitulo" Color="#101010"/>
+
+    <!-- Estilos texto -->
+    <Style x:Key="EstiloLogo" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource Oscuro}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style x:Key="TextoTitulo" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource Verde}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style x:Key="EncabezadoTabla" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource Verde}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <!-- Botones -->
+    <Style x:Key="BotonMenu" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource Oscuro}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="0,20"/>
+    </Style>
+
+    <Style x:Key="BotonSalir" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource Oscuro}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="20,50"/>
+    </Style>
+
+    <!-- Estilos de los bordes de la tabla-->
+    <Style x:Key="Bordes" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource Verde}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <!-- Estilo para los DataGrids en la interfaz de NORTHWIND -->
+    <Style TargetType="DataGrid">
+        <Setter Property="BorderBrush" Value="Green"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="#1E1E1E"/>
+        <!-- Fondo oscuro -->
+        <Setter Property="GridLinesVisibility" Value="None"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+    </Style>
+
+    <Style TargetType="DataGridCell">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="#2A2A2A"/>
+        <Setter Property="Foreground" Value="Green"/>
+        <Setter Property="FontSize" Value="14"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#4CAF50"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="Proyecto2Trimestre.InicioControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Proyecto2Trimestre"
+             Height="450" Width="500">
+    <Grid>
+        <!-- Definir una fila para el título, una fila para los encabezados y otra para el DataGrid -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título -->
+        <Label
+            Foreground="Black" 
+            FontSize="24"
+            FontFamily="Inter"
+            FontWeight="Bold"
+            HorizontalAlignment="Left"
+            Grid.Row="0">
+            <Label.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="img/inicioverde.png" Width="32" Height="32" Margin="0,0,10,0"/>
+                    <TextBlock Text="INICIO" VerticalAlignment="Center" Foreground="#5DB85B"/>
+                </StackPanel>
+            </Label.Content>
+        </Label>
+
+        <!-- Encabezados fuera del Border -->
+        <Grid Grid.Row="1" Margin="20,5,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Producto" Style="{StaticResource EncabezadoTabla}" HorizontalAlignment="Center"/>
+            <TextBlock Text="Categoría" Style="{StaticResource EncabezadoTabla}" HorizontalAlignment="Center" Grid.Column="1"/>
+        </Grid>
+
+        <!-- DataGrid dentro del Border -->
+        <Border Style="{StaticResource Bordes}" Margin="20,5,20,27" Grid.Row="2">
+            <DataGrid x:Name="dgProductos" 
+                      AutoGenerateColumns="False" 
+                      Background="Transparent" 
+                      GridLinesVisibility="Vertical" 
+                      IsReadOnly="True" 
+                      VerticalAlignment="Stretch" 
+                      HorizontalAlignment="Stretch">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding ProductName}" Width="*" />
+                    <DataGridTextColumn Binding="{Binding CategoryName}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>
